@@ -6,8 +6,15 @@ const CommonImage = (props) => {
 
   return (
     <picture {...others}>
-      <source media="(max-width: 320px)" srcSet={smallScreenImageUrl} />
-      <Image src={defaultImageUrl} alt={alt} width={500} height={300} fill />
+      <source media="(max-width: 425px)" srcSet={smallScreenImageUrl} />
+      <Image
+        src={defaultImageUrl}
+        alt={alt}
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
+      />
     </picture>
   );
 };

@@ -5,17 +5,17 @@ const images = [
   {
     alt: "component-01_Image-01",
     defaultImageUrl: "/assets/component-01/Image-01@2x.jpg",
-    smallScreenImageUrl: "/assets/component-02/Image-01.jpg",
+    smallScreenImageUrl: "/assets/component-01/Image-01.jpg",
   },
   {
     alt: "component-01_Image-02",
     defaultImageUrl: "/assets/component-01/Image-02@2x.jpg",
-    smallScreenImageUrl: "/assets/component-02/Image-02.jpg",
+    smallScreenImageUrl: "/assets/component-01/Image-02.jpg",
   },
   {
     alt: "component-01_Image-03",
     defaultImageUrl: "/assets/component-01/Image-03@2x.jpg",
-    smallScreenImageUrl: "/assets/component-02/Image-03.jpg",
+    smallScreenImageUrl: "/assets/component-01/Image-03.jpg",
   },
 ];
 
