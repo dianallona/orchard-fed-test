@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { default as CommonImage } from "../ui/common-image";
 
 const images = [
@@ -19,6 +20,9 @@ const ComponentO1 = () => {
   const getImageList = () => {
     return images.map((values, index) => (
       <CommonImage
+        className={classNames({
+          "sm:row-span-2": index === 0,
+        })}
         key={`component-01_${values.defaultImage}_${index}`}
         folderName="component-01"
         {...values}
@@ -27,14 +31,19 @@ const ComponentO1 = () => {
   };
 
   return (
-    <section className="grid gap-14">
-      <div className="grid gap-4">{getImageList()}</div>
-      <div className="grid gap-14">
-        <div className="grid gap-10">
-          <h1 className="text-xl font-light underline underline-offset-[16px]">
-            ANSWER YOUR BODY&apos;S NEEDS
-          </h1>
-          <p className="text-base font-light ">
+    <section className="grid gap-14 xl:gap-7 xl:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 sm:grid-rows-2 xl:col-span-2">
+        {getImageList()}
+      </div>
+      <div className="flex flex-col gap-8">
+        <div className="grid gap-8">
+          <div className="grid gap-4">
+            <h1 className="text-xl xl:text-2xl xl:font-thin font-light">
+              ANSWER YOUR BODY&apos;S NEEDS
+            </h1>
+            <hr />
+          </div>
+          <p className="text-base font-light xl:text-lg">
             The way ingredients are sourced affects the way we nourish our
             bodies. Author Mark Schatzer believes our body naturally devolops an
             appetite for the foods and nutrients it needs to be healthy, but

@@ -2,10 +2,10 @@ import Image from "next/image";
 import { memo } from "react";
 
 const CommonImage = (props) => {
-  const { folderName, defaultImage, smallScreenImage } = props;
+  const { folderName, defaultImage, smallScreenImage, ...others } = props;
 
   return (
-    <picture>
+    <picture {...others}>
       <source
         media="(max-width: 320px)"
         srcSet={`/assets/${folderName}/${smallScreenImage}`}
