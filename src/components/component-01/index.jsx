@@ -27,6 +27,7 @@ const ComponentO1 = () => {
           "sm:row-span-2": index === 0,
         })}
         key={`${values.alt}_${index}`}
+        imageClassName="hover:scale-105 transition ease-in-out delay-150 duration-300 cursor-pointer"
         {...values}
       />
     ));
@@ -57,7 +58,7 @@ const ComponentO1 = () => {
         </div>
         <div className="grid gap-4">
           <h2 className="text-alert font-medium text-base">BE MINDFUL</h2>
-          <p className="text-base font-semibold">
+          <p className="text-base xl:text-lg font-semibold">
             Sourcing local or organic food is a good way to start being more
             mindful about what you&apos;re cooking and eating
           </p>

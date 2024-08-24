@@ -37,8 +37,10 @@ const Component02 = () => {
     ));
   };
   return (
-    <section className="grid gap-12">
-      <h1 className="text-2xl font-thin text-center">ALL THE BEST FROM AEG</h1>
+    <section className="grid gap-12 xl:gap-16">
+      <h1 className="text-2xl font-thin text-center xl:text-5xl">
+        ALL THE LATEST FROM AEG
+      </h1>
       <div className="grid md:grid-cols-3 md:gap-6 lg:gap-12 gap-12">
         {getCardContents()}
       </div>
