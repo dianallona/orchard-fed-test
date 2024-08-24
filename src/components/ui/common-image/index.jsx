@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import Image from "next/image";
-import { memo } from "react";
 
 const CommonImage = ({
   alt,
@@ -19,9 +18,10 @@ const CommonImage = ({
         height={0}
         sizes="100vw"
         className={classNames(imageClassName, "w-full h-auto")}
+        priority
       />
     </picture>
   );
 };
 
-export default memo(CommonImage);
+export default CommonImage;
