@@ -79,7 +79,7 @@ const Component02 = () => {
         {active && (
           <CommonImage
             alt={`${active?.alt}_modal`}
-            imageClassName="!h-[calc(100vh-200px)]"
+            imageClassName="h-auto md:h-[calc(100vh-200px)]"
             {...active}
           />
         )}
