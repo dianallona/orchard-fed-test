@@ -1,9 +1,14 @@
+import classNames from "classnames";
 import Image from "next/image";
 import { memo } from "react";
 
-const CommonImage = (props) => {
-  const { alt, defaultImageUrl, smallScreenImageUrl, ...others } = props;
-
+const CommonImage = ({
+  alt,
+  defaultImageUrl,
+  smallScreenImageUrl,
+  imageClassName,
+  ...others
+}) => {
   return (
     <picture {...others}>
       <source media="(max-width: 425px)" srcSet={smallScreenImageUrl} />
@@ -13,7 +18,7 @@ const CommonImage = (props) => {
         width={0}
         height={0}
         sizes="100vw"
-        className="w-full h-auto"
+        className={classNames(imageClassName, "w-full h-auto")}
       />
     </picture>
   );
