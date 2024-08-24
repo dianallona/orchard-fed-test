@@ -3,16 +3,19 @@ import { default as CommonImage } from "../ui/common-image";
 
 const images = [
   {
-    defaultImage: "Image-01@2x.jpg",
-    smallScreenImage: "Image-01.jpg",
+    alt: "component-01_Image-01",
+    defaultImageUrl: "/assets/component-01/Image-01@2x.jpg",
+    smallScreenImageUrl: "/assets/component-02/Image-01.jpg",
   },
   {
-    defaultImage: "Image-02@2x.jpg",
-    smallScreenImage: "Image-02.jpg",
+    alt: "component-01_Image-02",
+    defaultImageUrl: "/assets/component-01/Image-02@2x.jpg",
+    smallScreenImageUrl: "/assets/component-02/Image-02.jpg",
   },
   {
-    defaultImage: "Image-03@2x.jpg",
-    smallScreenImage: "Image-03.jpg",
+    alt: "component-01_Image-03",
+    defaultImageUrl: "/assets/component-01/Image-03@2x.jpg",
+    smallScreenImageUrl: "/assets/component-02/Image-03.jpg",
   },
 ];
 
@@ -23,8 +26,7 @@ const ComponentO1 = () => {
         className={classNames({
           "sm:row-span-2": index === 0,
         })}
-        key={`component-01_${values.defaultImage}_${index}`}
-        folderName="component-01"
+        key={`${values.alt}_${index}`}
         {...values}
       />
     ));
