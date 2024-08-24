@@ -1,9 +1,13 @@
 "use client";
 import Link from "next/link";
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import CommonImage from "../common-image";
 
 const Card = ({ image, title, description }) => {
+  const handleOnClickReadMore = useCallback((e) => {
+    console.log(e?.target || null);
+  }, []);
+
   return (
     <div>
       <CommonImage
@@ -15,6 +19,7 @@ const Card = ({ image, title, description }) => {
       <Link
         href="#"
         className="hover:font-semibold underline underline-offset-8 decoration-alert transition-all ease-in-out delay-100 duration-200"
+        onClick={handleOnClickReadMore}
       >
         READ MORE
       </Link>
