@@ -1,31 +1,25 @@
 "use client";
 import useClickOutside from "@/hooks/useClickOutside";
+import useOnEscapePressed from "@/hooks/useOnEscapePressed";
 import { useEffect, useRef, useState } from "react";
 
 const Modal = ({ open, onClose, children }) => {
   const ref = useRef(null);
-  const isClickedOutside = useClickOutside(ref, open);
   const [isOpen, setIsOpen] = useState(false);
 
   /** If the user clicks outside the modal, the modal will close */
-  useEffect(() => {
-    console.log({ isClickedOutside });
-    if (!isClickedOutside) return;
-
+  const handleClose = () => {
     setIsOpen(false);
     onClose?.(false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isClickedOutside]);
+  };
+
+  useOnEscapePressed(handleClose);
+  useClickOutside(ref, open, handleClose);
 
   /** If the user passed an open=true object, the modal will show */
   useEffect(() => {
     setIsOpen(open);
   }, [open]);
-
-  const handleClose = () => {
-    setIsOpen(false);
-    onClose?.(false);
-  };
 
   if (!isOpen) return null;
 

@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-const useClickOutside = (ref, isActive) => {
-  const [isClicked, setIsClicked] = useState(false);
-
+const useClickOutside = (ref, isActive, handler) => {
   useEffect(() => {
-    setIsClicked(false);
-
     const handleClickOutside = (event) => {
       if (ref.current && !ref.current.contains(event.target) && isActive) {
-        setIsClicked(true);
+        handler?.(event);
       }
     };
 
@@ -18,9 +14,11 @@ const useClickOutside = (ref, isActive) => {
       // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref, isActive]);
 
-  return isClicked;
+  return false;
 };
 
 export default useClickOutside;
