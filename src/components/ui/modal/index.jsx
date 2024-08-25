@@ -1,6 +1,5 @@
 "use client";
 import useClickOutside from "@/hooks/useClickOutside";
-import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 
 const Modal = ({ open, onClose, children }) => {
@@ -28,11 +27,11 @@ const Modal = ({ open, onClose, children }) => {
     onClose?.(false);
   };
 
+  if (!isOpen) return null;
+
   return (
     <div
-      className={classNames("relative z-10", {
-        hidden: !isOpen,
-      })}
+      className="relative z-10 no-doc-scroll"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
